@@ -1,0 +1,78 @@
+---
+  title: Venue Finder
+  summary: A full-stack venue finder platform built with Next.js and Python, similar to Airbnb but for event venues.
+  image: /images/projects/venuefinder.webp
+  author: 'Montell Luseno'
+  publishedAt: '2024-08-04'
+---
+
+This is a full-stack venue finder platform built with Next.js and Python. It's similar to Airbnb but specifically designed for finding and booking venues for events. The platform uses a Python backend API with FastAPI and a Next.js frontend for a seamless user experience.
+
+## Features
+
+- **Venue Search & Filtering**: Search venues by location, capacity, amenities, and event type.
+- **Interactive Map**: View venues on an interactive map with detailed location information.
+- **Booking System**: Complete booking flow with availability checking and reservation management.
+- **User Profiles**: Separate profiles for venue owners and event organizers.
+- **Review System**: Rate and review venues after events.
+- **Photo Galleries**: Upload and browse high-quality venue photos.
+- **Payment Processing**: Secure payment handling for venue bookings.
+- **Calendar Integration**: Real-time availability calendar for venues.
+
+## Technologies
+
+- **Next.js**: React framework for the frontend with server-side rendering.
+- **Python**: Backend API built with FastAPI for high performance.
+- **PostgreSQL**: Database for storing venue, user, and booking data.
+- **Redis**: Caching layer for improved performance.
+- **Stripe**: Payment processing for secure transactions.
+- **Cloudinary**: Image storage and optimization for venue photos.
+- **Tailwind CSS**: Utility-first CSS framework for responsive design.
+- **Vercel**: Deployment platform for the Next.js frontend.
+
+## Getting Started
+
+To get started with this project, you can clone the repository and set up both the backend and frontend:
+
+```bash
+git clone https://github.com/Mont3ll/venuefinder_backend.git
+cd venuefinder_backend
+
+# Setup Python backend
+cd backend
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+pip install -r requirements.txt
+
+# Setup Next.js frontend
+git clone https://github.com/Mont3ll/venuefinder.git
+cd venuefinder
+npm install
+```
+
+Create a `.env` file in both backend and frontend directories with the required environment variables.
+
+Start the development servers:
+
+```bash
+# Backend (Python/FastAPI)
+cd backend
+uvicorn main:app --reload
+
+# Frontend (Next.js)
+cd frontend
+npm run dev
+```
+
+The backend API will be available at `http://localhost:8000` and the frontend at `http://localhost:3000`.
+
+## Deployment
+
+The application is deployed with:
+- **Backend**: Python API deployed on Railway or Heroku
+- **Frontend**: Next.js app deployed on Vercel
+- **Database**: PostgreSQL hosted on Supabase or Railway
+
+## Conclusion
+
+This venue finder platform demonstrates how to build a comprehensive marketplace application using modern technologies. By combining Python's robust backend capabilities with Next.js's excellent frontend performance, the platform provides a smooth experience for both venue owners and event organizers looking to connect and book perfect event spaces.

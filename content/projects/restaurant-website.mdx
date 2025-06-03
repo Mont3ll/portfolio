@@ -1,0 +1,77 @@
+---
+  title: Restaurant Website
+  summary: A dynamic restaurant website built with Django, featuring an interactive menu and online order system.
+  image: /images/projects/eatgud.webp
+  author: 'Montell Luseno'
+  publishedAt: '2023-10-01'
+---
+
+This is a dynamic restaurant website built with Django, designed to showcase the restaurant's menu and allow customers to place orders online. The platform uses plain HTML, CSS, and JavaScript for the frontend, ensuring simplicity and responsiveness.
+
+## Features
+
+- **Interactive Menu**: Browse dishes with detailed descriptions, prices, and images.
+- **Online Ordering**: Place orders directly from the website with real-time order tracking.
+- **Reservation System**: Book tables online with date and time selection.
+- **Admin Dashboard**: Manage menu items, orders, and reservations.
+- **Customer Reviews**: Display customer feedback and ratings.
+- **Mobile Friendly**: Fully responsive design for seamless browsing on any device.
+- **Contact Form**: Reach out to the restaurant for inquiries or feedback.
+
+## Technologies
+
+- **Django**: Python web framework for backend development.
+- **SQLite**: Lightweight database for storing menu, orders, and reservations.
+- **HTML, CSS, JavaScript**: Frontend technologies for building interactive pages.
+- **AJAX**: Asynchronous JavaScript for dynamic content updates.
+
+## Getting Started
+
+To get started with this project, you can clone the repository and set up the development environment:
+
+```bash
+git clone https://github.com/Mont3ll/Restaurant.git
+cd restaurant-website
+
+# Setup Python environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+pip install -r requirements.txt
+
+# Run migrations
+python manage.py migrate
+
+# Start the development server
+python manage.py runserver
+```
+
+The application will be available at `http://localhost:8000`.
+
+## Key Features Implementation
+
+### Menu Management
+The admin dashboard allows restaurant staff to add, edit, and remove menu items, including images and descriptions.
+
+### Online Ordering
+Customers can select dishes, specify quantities, and place orders online. The system provides real-time order tracking and notifications.
+
+### Reservation System
+Integrated table booking system with date and time selection, ensuring a smooth reservation process.
+
+## Deployment
+
+The application is deployed with:
+- **Hosting**: PythonAnywhere or Heroku for Django applications
+- **Database**: SQLite for development, PostgreSQL for production
+- **Static Files**: AWS S3 or Django's static file handling
+
+## Business Impact
+
+This website enhances the restaurant's online presence by:
+- Showcasing the menu with high-quality images and descriptions
+- Streamlining the ordering and reservation process
+- Providing a platform for customer engagement through reviews and feedback
+
+## Conclusion
+
+This restaurant website demonstrates how Django can be used to build a robust and user-friendly platform for the food service industry. By combining Python's backend capabilities with simple frontend technologies, the website offers a seamless experience for both customers and restaurant staff.

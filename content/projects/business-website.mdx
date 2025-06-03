@@ -1,0 +1,111 @@
+---
+  title: Karibu Kahawa Coffee Academy
+  summary: A comprehensive business website for a specialty coffee roastery and SCA-certified education center built with Next.js.
+  image: /images/projects/karibukahawa.webp
+  author: 'Montell Luseno'
+  publishedAt: '2024-09-12'
+---
+
+This is a comprehensive business website for Karibu Kahawa, a specialty coffee roastery and SCA-certified education center. The platform combines e-commerce functionality for coffee sales with an integrated learning management system for SCA certification courses, built entirely with Next.js and modern web technologies.
+
+## Features
+
+- **Coffee Shop & Roastery**: Browse and purchase freshly roasted specialty coffee beans.
+- **SCA Course Catalog**: Complete course listings for all SCA certification programs.
+- **Online Booking System**: Schedule and book coffee education courses and cupping sessions.
+- **Student Portal**: Track course progress, access materials, and view certifications.
+- **Coffee Blog**: Educational content about coffee origins, brewing techniques, and industry news.
+- **Roasting Calendar**: Real-time roasting schedule and fresh coffee availability.
+- **Equipment Store**: Purchase professional coffee equipment and brewing accessories.
+- **Virtual Cupping**: Online tasting sessions and sensory evaluation training.
+
+## SCA Programs Offered
+
+- **Barista Skills**: From foundation to professional level barista training.
+- **Brewing**: Coffee extraction methods and brewing technique mastery.
+- **Roasting**: Green coffee processing and roast profile development.
+- **Sensory Skills**: Cupping protocols and coffee quality assessment.
+- **Sustainability**: Ethical sourcing and environmental impact education.
+- **Green Coffee**: Origin studies and coffee supply chain understanding.
+
+## Technologies
+
+- **Next.js**: Full-stack React framework with server-side rendering and API routes.
+- **Tailwind CSS**: Utility-first CSS framework for custom design implementation.
+- **Stripe**: Payment processing for coffee sales and course enrollment.
+- **Sanity CMS**: Headless content management for coffee products and course content.
+- **NextAuth.js**: Authentication system for students and instructors.
+- **Framer Motion**: Smooth animations and interactive user experience.
+- **Resend**: Email notifications for course updates and order confirmations.
+- **Vercel**: Deployment platform with edge functions and global CDN.
+
+## Getting Started
+
+To get started with this project, you can clone the repository and set up the development environment:
+
+```bash
+git clone https://github.com/Mont3ll/kahawa-fullstack.git
+cd kahawa-fullstack
+npm install
+```
+
+Set up your environment variables in a `.env.local` file:
+
+```bash
+# Database & CMS
+SANITY_PROJECT_ID="your-sanity-project-id"
+SANITY_DATASET="production"
+SANITY_API_TOKEN="your-sanity-token"
+
+# Authentication
+NEXTAUTH_SECRET="your-nextauth-secret"
+NEXTAUTH_URL="http://localhost:3000"
+
+# Payments
+STRIPE_PUBLIC_KEY="your-stripe-public-key"
+STRIPE_SECRET_KEY="your-stripe-secret-key"
+STRIPE_WEBHOOK_SECRET="your-stripe-webhook-secret"
+
+# Email
+RESEND_API_KEY="your-resend-api-key"
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+The application will be available at `http://localhost:3000`.
+
+## Key Features Implementation
+
+### Course Management
+The platform integrates with Sanity CMS to manage course content, schedules, and instructor information. Students can enroll in multiple SCA programs and track their certification progress.
+
+### E-commerce Integration
+Seamless integration between coffee sales and educational services, allowing customers to purchase beans while exploring educational opportunities.
+
+### SCA Certification Tracking
+Built-in progress tracking for all SCA certification levels, from foundation to professional, with automated certificate generation upon completion.
+
+## Deployment
+
+The application is deployed with:
+- **Hosting**: Vercel with automatic deployments from Git
+- **CMS**: Sanity Studio for content management
+- **Payments**: Stripe for secure transactions
+- **Email**: Resend for transactional emails
+- **Analytics**: Vercel Analytics for performance monitoring
+
+## Business Impact
+
+This website serves as the digital hub for Karibu Kahawa's operations, combining:
+- Online coffee sales with detailed origin stories and tasting notes
+- Professional SCA education programs with certification tracking
+- Community building through coffee education and events
+- Brand storytelling showcasing the journey from farm to cup
+
+## Conclusion
+
+This business website demonstrates how modern web technologies can support a specialty coffee business's dual mission of roasting exceptional coffee and educating the next generation of coffee professionals. By integrating e-commerce with education, the platform creates a comprehensive digital experience that reflects Karibu Kahawa's commitment to coffee excellence and knowledge sharing.

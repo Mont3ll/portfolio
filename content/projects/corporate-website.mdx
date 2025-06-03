@@ -1,0 +1,96 @@
+---
+title: Elitemetrix Solutions Corporate Website
+summary: A dynamic corporate website for Elitemetrix Solutions, showcasing services and facilitating client engagement in East Africa.
+image: /images/projects/corporate-website.webp
+author: 'Montell Luseno'
+publishedAt: '2025-05-30'
+---
+
+This project is the official corporate website for Elitemetrix Solutions, "Your Gateway to East African Opportunities." It's built using Next.js (App Router) and features a dynamic, multilingual frontend designed to effectively communicate the company's services, values, and achievements while providing a platform for global client engagement.
+
+## Features
+
+- **Modern Frontend**: Built with Next.js App Router for optimal performance and developer experience.
+- **Responsive Design**: Ensures a seamless experience across desktops, tablets, and mobile devices.
+- **Multilingual Support**: Implemented using Next.js middleware and i18n routing (`/en`, `/sw`, `/fr`) with dictionary-based translations.
+- **Interactive Animations**: Engaging user interface with animations powered by Framer Motion and GSAP (GreenSock Animation Platform).
+- **Service Showcase**: Detailed sections for Community Sourcing, Investment Facilitation, QuickBooks Advisory, and Data Solutions.
+- **Client Engagement**:
+    - Integrated contact and quote request forms with email notifications (Nodemailer backend).
+    - Embedded Calendly widget for direct consultation booking.
+- **SEO Optimized**: Implemented on-page and technical SEO best practices for enhanced visibility.
+- **Component-Based Architecture**: Utilizing shadcn/ui for a consistent and accessible component library.
+- **(Future-Ready) CMS Integration**: Structured to easily integrate with Sanity.io for dynamic content management (backend/CMS integration was set aside in the initial budget but the frontend is prepared).
+
+## Technologies
+
+- **Framework**: [Next.js](https://nextjs.org/) (App Router)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **UI Components**: [shadcn/ui](https://ui.shadcn.com/)
+- **Animation**: [Framer Motion](https://www.framer.com/motion/), [GSAP](https://greensock.com/gsap/)
+- **Internationalization (i18n)**: Next.js Middleware, `@formatjs/intl-localematcher`, JSON dictionaries.
+- **Form Handling**: Client-side state management with API routes for submission.
+- **Email Notifications**: [Nodemailer](https://nodemailer.com/) (via API Routes)
+- **Booking Integration**: [react-calendly](https://github.com/calendly/calendly-inline-widget)
+- **(Planned) CMS**: [Sanity.io](https://www.sanity.io/)
+- **Deployment**: [Vercel](https://vercel.com/) (Recommended)
+
+## Getting Started
+
+To get started with this project locally:
+
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/[YOUR_GITHUB_USERNAME]/elitemetrix.git
+    cd elitemetrix
+    ```
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    # or yarn install / pnpm install
+    ```
+3.  **Set up Environment Variables:**
+    Create a `.env.local` file in the root directory and populate it with necessary API keys and configurations (e.g., for Nodemailer, Calendly link, and future Sanity integration). Refer to `.env.example` if available.
+    ```env
+    # Example for email notifications
+    EMAIL_SERVER_HOST=smtp.example.com
+    EMAIL_SERVER_PORT=587
+    EMAIL_SERVER_USER=your-email@example.com
+    EMAIL_SERVER_PASSWORD=your-password
+    EMAIL_FROM='Elitemetrix <no-reply@example.com>'
+    CONTACT_EMAIL_TO=recipient@example.com
+    QUOTE_EMAIL_TO=recipient@example.com
+
+    # Example for Calendly
+    NEXT_PUBLIC_CALENDLY_LINK=https://calendly.com/YOUR_USERNAME/consultation
+
+    # Future Sanity variables
+    # NEXT_PUBLIC_SANITY_PROJECT_ID=
+    # NEXT_PUBLIC_SANITY_DATASET=
+    ```
+4.  **Run the development server:**
+    ```bash
+    npm run dev
+    ```
+    The development server will typically start at `http://localhost:3000`.
+
+## Deployment
+
+This project is optimized for deployment on Vercel.
+1. Connect your Git repository to Vercel.
+2. Configure the necessary environment variables in your Vercel project settings.
+3. Deploy. Vercel will automatically build and deploy the Next.js application.
+
+## Project Goals & Vision
+
+The Elitemetrix Solutions website aims to:
+- Enhance the company's digital footprint.
+- Clearly articulate its diverse service offerings.
+- Build trust and credibility through case studies and testimonials.
+- Provide easy avenues for potential clients to initiate contact and book consultations.
+- Serve as a scalable platform for future growth, including full CMS integration and expanded content strategies.
+
+## Conclusion
+
+This website leverages a modern, robust tech stack to deliver a professional, performant, and user-friendly experience for Elitemetrix Solutions and its global clientele. The i18n implementation ensures broader reach, and the interactive elements aim to create an engaging first impression.

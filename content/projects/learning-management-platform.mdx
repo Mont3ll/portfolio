@@ -1,0 +1,91 @@
+---
+  title: Learning Management Platform
+  summary: A comprehensive learning management system built with Next.js, featuring course management, student enrollment, and integrated payments.
+  image: /images/projects/lms.webp
+  author: 'Montell Luseno'
+  publishedAt: '2024-07-15'
+---
+
+This is a comprehensive learning management platform built with Next.js and modern web technologies. The platform enables educators to create and manage courses while providing students with an intuitive learning experience, complete with progress tracking and secure payment processing.
+
+## Features
+
+- **Course Management**: Create, edit, and organize courses with multimedia content.
+- **Student Dashboard**: Track learning progress, assignments, and achievements.
+- **Video Streaming**: Integrated video player with playback controls and progress tracking.
+- **Payment Integration**: Secure course purchases using Stripe payment processing.
+- **Mobile Responsive**: Fully responsive design for learning on any device.
+- **Progress Analytics**: Detailed analytics for both students and instructors.
+
+## Technologies
+
+- **Next.js**: React framework with server-side rendering and API routes.
+- **Tailwind CSS**: Utility-first CSS framework for rapid UI development.
+- **Stripe**: Payment processing for course purchases and subscriptions.
+- **Prisma**: Modern database toolkit for data modeling and queries.
+- **PostgreSQL**: Robust relational database for storing course and user data.
+- **Uploadthing**: File upload service for course materials and assignments.
+- **NextAuth.js**: Authentication library with multiple provider support.
+- **Vercel**: Deployment platform optimized for Next.js applications.
+
+## Getting Started
+
+To get started with this project, you can clone the repository and set up the development environment:
+
+```bash
+git clone https://github.com/Mont3ll/lms-bomaed.git
+cd lms-bomaed
+npm install
+```
+
+Set up your environment variables in a `.env.local` file:
+
+```bash
+# Database
+DATABASE_URL="your-postgresql-url"
+
+# Authentication
+NEXTAUTH_SECRET="your-nextauth-secret"
+NEXTAUTH_URL="http://localhost:3000"
+
+# Stripe
+STRIPE_PUBLIC_KEY="your-stripe-public-key"
+STRIPE_SECRET_KEY="your-stripe-secret-key"
+STRIPE_WEBHOOK_SECRET="your-stripe-webhook-secret"
+
+# File Upload
+UPLOADTHING_SECRET="your-uploadthing-secret"
+UPLOADTHING_APP_ID="your-uploadthing-app-id"
+```
+
+Run the database migrations and start the development server:
+
+```bash
+npx prisma db push
+npm run dev
+```
+
+The application will be available at `http://localhost:3000`.
+
+## Key Features Implementation
+
+### Course Creation
+Instructors can create rich multimedia courses with chapters, lessons, and quizzes. The platform supports video uploads, document attachments, and interactive content.
+
+### Payment Processing
+Integrated Stripe checkout allows students to purchase individual courses or subscribe to premium content. The system handles one-time payments and recurring subscriptions.
+
+### Progress Tracking
+Students can track their learning progress through interactive dashboards showing completion rates, quiz scores, and time spent on courses.
+
+## Deployment
+
+The application is deployed on Vercel with:
+- **Database**: PostgreSQL hosted on Supabase
+- **File Storage**: Uploadthing for course materials
+- **Payments**: Stripe for secure transactions
+- **CDN**: Vercel Edge Network for global content delivery
+
+## Conclusion
+
+This learning management platform demonstrates how modern web technologies can be combined to create a powerful educational tool. With Next.js providing the foundation, Tailwind CSS ensuring beautiful design, and Stripe handling payments, the platform offers a complete solution for online education and course monetization.

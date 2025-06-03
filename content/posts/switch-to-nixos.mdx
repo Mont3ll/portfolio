@@ -1,0 +1,172 @@
+---
+  title: From WSL to NixOS - Why I Made the Switch to a Declarative Linux Distro
+  summary: After years of using WSL for development, I decided to make the jump to a full Linux setup. Here's why I chose NixOS over conventional distributions and how its unique approach to package management and system configuration won me over.
+  image: /images/posts/switch-to-nixos.webp
+  author: 'Mel'
+  publishedAt: '2025-02-06'
+---
+
+For the longest time, WSL (Windows Subsystem for Linux) was my go-to development environment. It worked remarkably well, giving me the best of both worlds—Windows for daily tasks and a Linux environment for development. But as my workflow became more complex and my need for customization grew, I found myself bumping against limitations. That's when I decided to make the leap to a full Linux setup, and after researching various distributions, I landed on NixOS. Here's why.
+
+## The WSL Era: Great, But Not Enough
+
+Don't get me wrong—WSL was fantastic for what it was. The integration with Windows was seamless, and for most development tasks, it felt native. I could run my Node.js projects, manage Docker containers, and work with various programming languages without any major issues.
+
+However, as my development needs evolved, I started hitting some walls:
+
+**Limited Multitasking Capabilities**  
+While WSL handled single-task development well, I found myself wanting more sophisticated multitasking tools. The Windows-centric approach to window management wasn't cutting it for my increasingly complex workflows.
+
+**Customization Constraints**  
+I craved deeper system customization—the ability to tweak everything from window managers to system behaviors in ways that Windows simply couldn't accommodate, even with WSL running underneath.
+
+**Window Management Limitations**  
+This was perhaps the biggest pain point. I needed a proper tiling window manager, something that could help me organize multiple terminals, editors, and browser windows efficiently. Windows' built-in window management, even with third-party tools, felt clunky compared to what Linux offered.
+
+## The Search for the Perfect Linux Distro
+
+Once I decided to make the switch, I had to choose a distribution. I considered the usual suspects—Ubuntu, Fedora, Arch Linux—but something about NixOS kept drawing me back. The more I researched, the more I realized it offered something fundamentally different.
+
+## Why NixOS? The Declarative Advantage
+
+NixOS isn't just another Linux distribution; it's a completely different approach to system management. Here's what makes it special:
+
+### Declarative Configuration
+
+Unlike traditional distributions where you install packages and modify configuration files imperatively, NixOS uses a declarative approach. Your entire system configuration is defined in a single file (or set of files) written in the Nix language.
+
+```nix
+# Example of a simple NixOS configuration
+{
+  services.xserver.enable = true;
+  services.xserver.windowManager.i3.enable = true;
+  environment.systemPackages = with pkgs; [
+    firefox
+    vscode
+    git
+  ];
+}
+```
+
+This means I can describe exactly what I want my system to look like, and NixOS makes it happen. No more remembering which packages I installed or how I configured a particular service.
+
+### Reproducible Environments
+
+One of NixOS's killer features is reproducibility. Since everything is declared in configuration files, I can recreate my exact system setup on any machine. This is incredibly powerful for:
+
+- **Development Environment Consistency**: My development setup is identical across different machines
+- **Backup and Recovery**: My configuration files ARE my backup—no need to remember settings
+- **Experimentation**: I can try new configurations without fear of breaking my system
+
+### Atomic Upgrades and Rollbacks
+
+Every system change in NixOS creates a new "generation." If an update breaks something, I can instantly roll back to the previous working state. This eliminates the anxiety around system updates that plague traditional distributions.
+
+### Isolation and Reproducibility
+
+NixOS's package manager ensures that different versions of the same software can coexist without conflicts. Each package is stored in its own directory with a unique hash, preventing dependency hell entirely.
+
+## The Window Manager Paradise
+
+One of my primary motivations for switching was access to powerful window managers, and NixOS delivers beautifully here. I can easily configure and switch between different window managers:
+
+```nix
+services.xserver.windowManager = {
+  i3.enable = true;
+  awesome.enable = true;
+  xmonad.enable = true;
+};
+```
+
+Currently, I'm running i3 with custom keybindings and layouts that transform my workflow. The level of customization possible is extraordinary—every aspect of the window management experience can be tailored to my exact preferences.
+
+## Multitasking Nirvana
+
+The combination of a tiling window manager and NixOS's system-level configurability has revolutionized my multitasking capabilities. I can:
+
+- **Efficiently manage multiple workspaces** with distinct purposes (coding, research, communication)
+- **Create custom layouts** for different types of work
+- **Use sophisticated terminal multiplexing** with tools like tmux integrated seamlessly
+- **Switch between different development environments** without conflict
+
+## Package Management Reimagined
+
+Traditional package managers modify your system state directly. NixOS's approach is fundamentally different:
+
+### Functional Package Management
+
+Packages in NixOS are built functionally—they're immutable and don't interfere with each other. This means:
+
+- No more broken dependencies
+- Multiple versions of the same software can coexist
+- Clean uninstalls that actually remove everything
+
+### Development Shells
+
+With `nix-shell`, I can create isolated development environments for different projects without polluting my global system:
+
+```bash
+# Create a temporary shell with specific packages
+nix-shell -p nodejs python3 postgresql
+```
+
+Each project can have its own shell.nix file defining exactly what dependencies it needs.
+
+## The Learning Curve: Honest Reflections
+
+I won't sugarcoat it—NixOS has a steep learning curve. The Nix language takes time to master, and thinking declaratively about system configuration requires a mental shift. However, the investment pays off:
+
+**Initial Challenges:**
+- Understanding the Nix language syntax
+- Figuring out how to translate imperative system administration to declarative configuration
+- Finding the right options for specific configurations
+
+**Long-term Benefits:**
+- Unparalleled system reliability
+- Complete configuration reproducibility
+- Fearless experimentation with system changes
+- A deep understanding of how Linux systems work
+
+## Real-World Impact on My Workflow
+
+Since making the switch, my development workflow has transformed:
+
+**System Stability**: I haven't had a single system-breaking update or configuration conflict
+**Rapid Environment Setup**: New projects get their own isolated environments in seconds
+**Consistent Experience**: My setup is identical whether I'm on my laptop or desktop
+**Efficient Multitasking**: The tiling window manager has eliminated window management overhead
+
+## Configuration as Code
+
+Perhaps the most profound change is treating my system configuration as code. My NixOS configuration is version-controlled, documented, and continuously refined. When I discover a useful tool or make an optimization, it gets added to my configuration files and becomes part of my permanent setup.
+
+This approach has made me more intentional about my tools and workflows. Instead of accumulating cruft over time, my system stays clean and purposeful.
+
+## Would I Recommend NixOS?
+
+NixOS isn't for everyone, but it's perfect for certain types of users:
+
+**Great for:**
+- Developers who value reproducible environments
+- Users who love customization and tinkering
+- Anyone who's suffered from dependency conflicts
+- People who want their system configuration as code
+
+**Maybe not for:**
+- Users who want something that "just works" out of the box
+- Those who prefer learning through GUI configuration tools
+- Anyone uncomfortable with configuration files and command-line tools
+
+## The Verdict: A Worthwhile Journey
+
+The switch from WSL to NixOS has been one of the best technical decisions I've made recently. While WSL served me well, NixOS offers a level of control, reliability, and customization that's simply unmatched.
+
+The declarative approach has fundamentally changed how I think about system administration. Instead of hoping my manual configurations stick around, I have a clear, version-controlled definition of exactly how my system should behave.
+
+If you're a developer who values reproducibility, loves customization, and isn't afraid of a learning curve, NixOS might just be the Linux distribution you've been looking for. The initial investment in learning the Nix way of doing things pays dividends in system reliability and workflow efficiency.
+
+The future is declarative, and I'm excited to be part of it.
+
+---
+
+*Have you made the switch to NixOS or are you considering it? What's holding you back or what convinced you to make the leap? Share your Linux distribution journey in the comments below!*
